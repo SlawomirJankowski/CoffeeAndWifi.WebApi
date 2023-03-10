@@ -5,8 +5,6 @@ using CoffeeAndWifi.WebApi.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-//dodać autentykację,  obsługę userów z JWT
-
 
 namespace CoffeeAndWifi.WebApi.Controllers
 {
