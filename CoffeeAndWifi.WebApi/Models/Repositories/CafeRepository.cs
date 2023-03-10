@@ -12,23 +12,7 @@ namespace CoffeeAndWifi.WebApi.Models.Repositories
             _context = context;
         }
 
-        //public IEnumerable<Cafe> Get()
-        //{
-        //    var cafes = _context.Cafes;
-        //    if (cafes.Any())
-        //    {
-        //        foreach (var cafe in cafes)
-        //        {
-        //            cafe.CoffeeRating = GetCoffeeRating(cafe.CoffeeRatingId);
-        //            cafe.WifiStrengthRating = GetWifiRating(cafe.WifiStrengthRatingId);
-        //            cafe.PowerSocketsRating = GetPwrSocketRating(cafe.PowerSocketsRatingId);
-        //        }
-        //        return cafes;
-        //    }
-        //    throw new Exception("Cafes not found");
-        //}
-                
-
+              
         public Cafe Get(int id)
         {
             var cafe = _context.Cafes.FirstOrDefault(x => x.Id == id);
@@ -46,7 +30,6 @@ namespace CoffeeAndWifi.WebApi.Models.Repositories
         public IEnumerable<Cafe> Get(string city)
         {
             var cafesInCity = _context.Cafes.Where(x => x.City.ToLower() == city.ToLower());
-            //var cafesInCity = _context.Cafes;
             if (cafesInCity.Count() > 1)
             {
                 foreach (var cafe in cafesInCity)
